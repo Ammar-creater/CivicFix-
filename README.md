@@ -40,7 +40,7 @@ CivicFix/
 
 ---
 
-## 📌 Development Progress (Module 1 - Days 1 & 2)
+## 📌 Development Progress (Module 1 - Days 1 to 3)
 
 ### ✅ Day 1: Scaffolding & Initial Schemas
 - Initialized Git repository and directory structure.
@@ -59,6 +59,14 @@ CivicFix/
   - `notFound`: Custom 404 error handler for invalid endpoints.
   - `errorHandler`: Global Express error handler returning structured JSON errors.
 
+### ✅ Day 3: Full API Skeleton & Controller Logic
+- Implemented core controller functions in `reportController.js`:
+  - `createReport`: Handles report submission with validation.
+  - `getAllReports`: Retrieves all reports from MongoDB.
+  - `getReportById`: Retrieves a specific report by its ObjectId with safety validation.
+- Configured automated test suite (`jest` + `supertest`) to verify all report endpoints with mocked Mongoose models for fast, offline, and memory-safe validation.
+- Cleaned up custom development directories and configuration footprints.
+
 ---
 
 ## 🔌 API Endpoints Summary
@@ -66,9 +74,9 @@ CivicFix/
 | Method | Endpoint | Description | Status |
 | :--- | :--- | :--- | :--- |
 | `GET` | `/api/health` | Health check endpoint | Active |
-| `GET` | `/api/reports` | Get all reports | Placeholder |
-| `GET` | `/api/reports/:id` | Get report details | Placeholder |
-| `POST` | `/api/reports` | Submit a new report | Placeholder |
+| `GET` | `/api/reports` | Get all reports | Active |
+| `GET` | `/api/reports/:id` | Get report details | Active |
+| `POST` | `/api/reports` | Submit a new report | Active |
 | `GET` | `/api/users` | Get user list | Placeholder |
 | `POST` | `/api/users/register` | Register user account | Placeholder |
 | `POST` | `/api/users/login` | User login | Placeholder |
@@ -104,7 +112,13 @@ CivicFix/
    npm run dev   # or node server.js
    ```
 
-3. **Frontend Setup**
+3. **Running Tests**
+   Run the automated Jest suite to verify route and controller functionality:
+   ```bash
+   npm test
+   ```
+
+4. **Frontend Setup**
    ```bash
    cd ../client
    npm install

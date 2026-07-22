@@ -7,7 +7,18 @@ const notFound = (req, res, next) => {
 
 // Global Error Handler
 const errorHandler = (err, req, res, next) => {
-  const statusCode = res.statusCode === 200 ? 500 : res.statusCode;
+  let statusCode = res.statusCode === 200 ? 500 : res.statusCode;
+
+  // Handle Mongoose Validation Error
+  if (err.name === 'ValidationError') {
+    statusCode = 400;
+  }
+
+  // Handle Mongoose Cast Error (invalid ObjectIds)
+  if (err.name === 'CastError') {
+    statusCode = 400;
+  }
+
   res.status(statusCode).json({
     success: false,
     message: err.message,
