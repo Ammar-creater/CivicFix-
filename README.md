@@ -67,6 +67,19 @@ CivicFix/
 - Configured automated test suite (`jest` + `supertest`) to verify all report endpoints with mocked Mongoose models for fast, offline, and memory-safe validation.
 - Cleaned up custom development directories and configuration footprints.
 
+### ✅ Day 4: Schema Validation & Indexing
+- Strengthened `User` schema validation rules:
+  - Added min/max length checks to `name` (`2-50` characters).
+  - Added strict regex format validation and auto-lowercase/trim to `email`.
+  - Enforced a minimum length of `6` characters for `password`.
+  - Updated `role` validation rules and supported roles (`citizen`, `admin`, `department staff`).
+  - Added database index on `email` for quick authentication lookups.
+- Strengthened `Report` schema validation rules:
+  - Enforced `description` length limits between `10` and `1000` characters.
+  - Added regex structure verification on `photoUrl` to require a valid HTTP/HTTPS URL.
+  - Restricted `status` values strictly to `Reported`, `In Progress`, and `Resolved`.
+  - Added database indexes on `status`, `createdBy`, and `createdAt` for highly optimized query lookups, date sorting, and relationship queries.
+
 ---
 
 ## 🔌 API Endpoints Summary
