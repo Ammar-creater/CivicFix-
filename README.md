@@ -80,6 +80,13 @@ CivicFix/
   - Restricted `status` values strictly to `Reported`, `In Progress`, and `Resolved`.
   - Added database indexes on `status`, `createdBy`, and `createdAt` for highly optimized query lookups, date sorting, and relationship queries.
 
+### ✅ Day 5: React Project Structure & UI Layouts
+- Reorganized the Vite React frontend into modular `components/` and `pages/` directories.
+- Built a premium **Home** landing page layout with glassmorphism aesthetics, interactive mock reports feed, and key community metrics.
+- Built a modern **Login** page with role selection toggles (`citizen`, `staff`, `admin`) and polished form inputs.
+- Integrated `react-router-dom` to implement seamless navigation between Home and Login views.
+- Leveraged Tailwind CSS v4 and `lucide-react` for responsive, animated, and visually striking UI elements.
+
 ---
 
 ## 🔌 API Endpoints Summary
